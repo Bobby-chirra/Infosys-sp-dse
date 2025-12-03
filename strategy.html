@@ -1,0 +1,1014 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infosys SP & DSE Exam Prep - Complete Interactive Guide</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --light-color: #ecf0f1;
+            --success-color: #2ecc71;
+            --warning-color: #f39c12;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --border-radius: 8px;
+            --cheatsheet-color: #8e44ad;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+            padding: 0 10px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 30px 0;
+            background: linear-gradient(135deg, var(--primary-color), #1a5276);
+            color: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .company-badge {
+            display: inline-block;
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 5px 15px;
+            border-radius: 20px;
+            margin-top: 15px;
+            font-size: 1rem;
+        }
+        
+        .language-toggle {
+            display: flex;
+            justify-content: center;
+            margin: 25px 0;
+            gap: 10px;
+        }
+        
+        .lang-btn {
+            padding: 10px 25px;
+            background-color: rgba(255, 255, 255, 0.2);
+            border: 2px solid white;
+            color: white;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .lang-btn:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+        
+        .lang-btn.active {
+            background-color: white;
+            color: var(--primary-color);
+        }
+        
+        .section {
+            background-color: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            padding: 25px;
+            margin-bottom: 30px;
+        }
+        
+        .section-title {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--light-color);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            cursor: pointer;
+        }
+        
+        .section-title i {
+            color: var(--secondary-color);
+            transition: transform 0.3s ease;
+        }
+        
+        .section-title.collapsed i {
+            transform: rotate(-90deg);
+        }
+        
+        /* Expandable Content */
+        .expandable-content {
+            max-height: 1000px;
+            overflow: hidden;
+            transition: max-height 0.5s ease, opacity 0.3s ease;
+            opacity: 1;
+        }
+        
+        .expandable-content.collapsed {
+            max-height: 0;
+            opacity: 0;
+        }
+        
+        /* Cheatsheet Section */
+        .cheatsheet-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--cheatsheet-color);
+        }
+        
+        .cheatsheet-badge {
+            background-color: var(--cheatsheet-color);
+            color: white;
+            padding: 3px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+        
+        /* Code Blocks */
+        .code-block {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            border-radius: var(--border-radius);
+            padding: 20px;
+            margin: 15px 0;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        
+        .code-comment {
+            color: #7f8c8d;
+            font-style: italic;
+        }
+        
+        .code-keyword {
+            color: #3498db;
+        }
+        
+        .code-string {
+            color: #2ecc71;
+        }
+        
+        .code-method {
+            color: #f39c12;
+        }
+        
+        /* Problems Section Styles */
+        .problems-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .problem-card {
+            background-color: var(--light-color);
+            border-radius: var(--border-radius);
+            padding: 20px;
+            border-left: 4px solid var(--secondary-color);
+            transition: transform 0.2s ease;
+        }
+        
+        .problem-card:hover {
+            transform: translateY(-3px);
+        }
+        
+        .problem-card.completed {
+            border-left-color: var(--success-color);
+            background-color: rgba(46, 204, 113, 0.1);
+        }
+        
+        .problem-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+        
+        .problem-name {
+            font-weight: 600;
+            color: var(--primary-color);
+            font-size: 1.1rem;
+        }
+        
+        .problem-difficulty {
+            font-size: 0.8rem;
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-weight: 600;
+        }
+        
+        .easy {
+            background-color: rgba(46, 204, 113, 0.2);
+            color: #27ae60;
+        }
+        
+        .medium {
+            background-color: rgba(243, 156, 18, 0.2);
+            color: #d35400;
+        }
+        
+        .hard {
+            background-color: rgba(231, 76, 60, 0.2);
+            color: #c0392b;
+        }
+        
+        .problem-description {
+            color: #555;
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+        }
+        
+        .problem-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 15px;
+        }
+        
+        .tag {
+            background-color: rgba(52, 152, 219, 0.1);
+            color: var(--secondary-color);
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+        }
+        
+        .problem-actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .completed-btn {
+            background-color: transparent;
+            border: 2px solid #ddd;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        
+        .completed-btn:hover {
+            border-color: var(--success-color);
+        }
+        
+        .completed-btn.checked {
+            background-color: var(--success-color);
+            border-color: var(--success-color);
+            color: white;
+        }
+        
+        /* DSA Table */
+        .dsa-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background-color: white;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .dsa-table th {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+        
+        .dsa-table td {
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .dsa-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .dsa-table tr:hover {
+            background-color: #f9f9f9;
+        }
+        
+        /* Progress Container */
+        .progress-container {
+            margin-top: 20px;
+            background-color: #f5f5f5;
+            border-radius: var(--border-radius);
+            padding: 20px;
+        }
+        
+        .progress-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+        
+        .progress-bar {
+            height: 10px;
+            background-color: #ddd;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background-color: var(--success-color);
+            border-radius: 5px;
+            width: 0%;
+            transition: width 0.5s ease;
+        }
+        
+        /* Advice sections */
+        .advice-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .advice-card {
+            background-color: var(--light-color);
+            padding: 20px;
+            border-radius: var(--border-radius);
+            border-top: 4px solid var(--secondary-color);
+        }
+        
+        .advice-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .step-list {
+            list-style-type: none;
+            margin-top: 15px;
+        }
+        
+        .step-list li {
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+        
+        .step-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .step-list i {
+            color: var(--success-color);
+            margin-top: 3px;
+        }
+        
+        .immediate-steps {
+            background-color: #fff3cd;
+            border-color: var(--warning-color);
+        }
+        
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            color: #7f8c8d;
+            border-top: 1px solid #ddd;
+            margin-top: 40px;
+        }
+        
+        .action-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .action-btn {
+            padding: 12px 25px;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            border: none;
+            transition: all 0.3s ease;
+        }
+        
+        .print-btn {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .reset-btn {
+            background-color: #f8f9fa;
+            color: var(--primary-color);
+            border: 2px solid #ddd;
+        }
+        
+        .cheatsheet-btn {
+            background-color: var(--cheatsheet-color);
+            color: white;
+        }
+        
+        .action-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+        }
+        
+        @media (max-width: 768px) {
+            .problems-container, .advice-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .action-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .action-btn {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
+            }
+            
+            .dsa-table {
+                display: block;
+                overflow-x: auto;
+            }
+        }
+        
+        @media print {
+            .lang-btn, .action-btn, .completed-btn, .section-title i {
+                display: none !important;
+            }
+            
+            .expandable-content {
+                max-height: none !important;
+                opacity: 1 !important;
+            }
+            
+            .problem-card {
+                break-inside: avoid;
+            }
+        }
+    </style>
+
+    <style>
+        /* Base container + body tweaks */
+body {
+  padding: 0 8px;
+}
+
+.container {
+  padding: 16px 10px;
+}
+
+/* Make header more compact on small screens */
+@media (max-width: 768px) {
+  header {
+    padding: 22px 10px;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+    padding: 0 4px;
+  }
+
+  .company-badge {
+    font-size: 0.9rem;
+    padding: 4px 10px;
+  }
+
+  .section {
+    padding: 16px 12px;
+  }
+
+  .section-title {
+    font-size: 1rem;
+    gap: 8px;
+  }
+
+  .advice-card {
+    padding: 14px 10px;
+  }
+
+  .step-list li {
+    font-size: 0.9rem;
+  }
+
+  .code-block {
+    font-size: 0.8rem;
+    padding: 14px 10px;
+  }
+
+  footer {
+    padding: 20px 8px;
+    font-size: 0.9rem;
+  }
+}
+
+/* Extra-small screens */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.6rem;
+  }
+
+  .subtitle {
+    font-size: 0.95rem;
+  }
+
+  .language-toggle {
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .lang-btn {
+    width: 100%;
+    max-width: 260px;
+    justify-content: center;
+  }
+
+  .section-title {
+    flex-wrap: wrap;
+  }
+
+  .problem-header {
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .problem-actions {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .action-buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .action-btn {
+    width: 100%;
+    max-width: none;
+    justify-content: center;
+  }
+}
+
+/* Better code readability on narrow screens */
+.code-block {
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+    </style>
+</head>
+<body>
+        <script>
+        function goToPage() {
+            window.location.href = 'index.html'; 
+        }
+        
+    </script>
+    <div class="container">
+        <header>
+            <h1>Infosys SP & DSE Exam Preparation</h1>
+            <p class="subtitle">Complete Interactive Guide with Cheatsheets, Problems & 2-Day Intensive Plan</p>
+            <div class="company-badge">
+                <i class="fas fa-building"></i> Specialized for Infosys Specialist Programmer & Digital Specialist Engineer
+            </div>
+            
+            <div class="language-toggle">
+                <button onclick="goToPage()" class="lang-btn">Go Back</button>
+
+                <!-- <button onclick="goToPage2()" class="lang-btn">Questions</button> -->
+            </div>
+        </header>
+        
+        <!-- How to Approach Coding Section -->
+        <div class="section">
+            <h2 class="section-title" id="approachToggle">
+                <i class="fas fa-lightbulb"></i> How to Approach Coding During Exam/Interview
+                <i class="fas fa-chevron-down"></i>
+            </h2>
+            
+            <div class="expandable-content" id="approachContent">
+                <div class="advice-grid">
+                    <div class="advice-card">
+                        <h3><i class="fas fa-search"></i> Clarify & Plan</h3>
+                        <ul class="step-list">
+                            <li><i class="fas fa-check-circle"></i> Clarify problem input/output and constraints (ask 1–2 clarifying Qs)</li>
+                            <li><i class="fas fa-check-circle"></i> Give a 30-second plan (approach and complexity)</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="advice-card">
+                        <h3><i class="fas fa-code"></i> Execution Strategy</h3>
+                        <ul class="step-list">
+                            <li><i class="fas fa-check-circle"></i> Start with a simple correct solution (even brute force) then optimize</li>
+                            <li><i class="fas fa-check-circle"></i> Talk while coding — narrate edge cases and thought process</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="advice-card">
+                        <h3><i class="fas fa-vial"></i> Testing & Recovery</h3>
+                        <ul class="step-list">
+                            <li><i class="fas fa-check-circle"></i> Write test cases and run through them manually</li>
+                            <li><i class="fas fa-check-circle"></i> If stuck, explain tradeoffs and what you'd try next</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Last-Minute Exam Tactics -->
+        <div class="section">
+            <h2 class="section-title" id="tacticsToggle">
+                <i class="fas fa-clock"></i> Last-Minute Exam Tactics
+                <i class="fas fa-chevron-down"></i>
+            </h2>
+            
+            <div class="expandable-content" id="tacticsContent">
+                <div class="advice-grid">
+                    <div class="advice-card">
+                        <h3><i class="fas fa-list-ol"></i> Time Management</h3>
+                        <ul class="step-list">
+                            <li><i class="fas fa-check-circle"></i> Read full paper first (if multiple sections)</li>
+                            <li><i class="fas fa-check-circle"></i> Solve easy questions first</li>
+                            <li><i class="fas fa-check-circle"></i> Don't waste >30 mins on a single coding question</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="advice-card">
+                        <h3><i class="fas fa-clipboard-check"></i> MCQ Strategy</h3>
+                        <ul class="step-list">
+                            <li><i class="fas fa-check-circle"></i> Eliminate wrong options first</li>
+                            <li><i class="fas fa-check-circle"></i> Mark flagged ones to revisit</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="advice-card">
+                        <h3><i class="fas fa-sticky-note"></i> Notes & Fallback</h3>
+                        <ul class="step-list">
+                            <li><i class="fas fa-check-circle"></i> Keep one page of hand-written notes (formulas, snippets)</li>
+                            <li><i class="fas fa-check-circle"></i> If stuck: move on and come back later</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Immediate Steps -->
+        <div class="section immediate-steps">
+            <h2 class="section-title" id="stepsToggle">
+                <i class="fas fa-rocket"></i> What I Would Do If I Were You Right Now
+                <i class="fas fa-chevron-down"></i>
+            </h2>
+            
+            <div class="expandable-content" id="stepsContent">
+                <div class="advice-grid">
+                    <div class="advice-card immediate-steps">
+                        <h3><i class="fas fa-language"></i> Step 1: Language Choice</h3>
+                        <p>Pick your primary language (Java recommended for Infosys DSE). Stick with it for all practice.</p>
+                    </div>
+                    
+                    <div class="advice-card immediate-steps">
+                        <h3><i class="fas fa-calendar-day"></i> Step 2: Start Schedule</h3>
+                        <p>Start Day 1 schedule immediately. Use 90–120 minute focused sprints, 15 min breaks.</p>
+                    </div>
+                    
+                    <div class="advice-card immediate-steps">
+                        <h3><i class="fas fa-clipboard-list"></i> Step 3: Track Progress</h3>
+                        <p>Keep a simple doc of mistakes & one cheat-sheet. Do one mock timed test tonight.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        
+        <footer>
+            <p>Infosys SP & DSE Exam Preparation Guide • Complete Interactive Reference</p>
+            <p>Remember: Consistent practice with focused intent beats last-minute cramming.</p>
+            
+            <div class="action-buttons">
+                <button class="action-btn print-btn" id="printBtn">
+                    <i class="fas fa-print"></i> Print This Guide
+                </button>
+                <button class="action-btn reset-btn" id="resetBtn">
+                    <i class="fas fa-redo"></i> Reset Progress
+                </button>
+                <button class="action-btn cheatsheet-btn" id="expandAllBtn">
+                    <i class="fas fa-expand"></i> Expand All Sections
+                </button>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Practice problems data
+        const practiceProblems = [
+            {
+                id: 1,
+                name: "Two Sum",
+                difficulty: "easy",
+                description: "Find two numbers in an array that add up to a target value.",
+                tags: ["HashMap", "Array"],
+                pattern: "Hash Table",
+                completed: false
+            },
+            {
+                id: 2,
+                name: "Reverse a String / Reverse Words",
+                difficulty: "easy",
+                description: "Reverse characters in a string or reverse words in a sentence.",
+                tags: ["String", "Two Pointers"],
+                pattern: "String Manipulation",
+                completed: false
+            },
+            {
+                id: 3,
+                name: "Longest Substring Without Repeating Characters",
+                difficulty: "medium",
+                description: "Find the length of the longest substring without repeating characters.",
+                tags: ["Sliding Window", "HashSet"],
+                pattern: "Sliding Window",
+                completed: false
+            },
+            {
+                id: 4,
+                name: "Container With Most Water / Max Subarray (Kadane)",
+                difficulty: "medium",
+                description: "Find maximum area or maximum sum subarray using efficient algorithms.",
+                tags: ["Two Pointers", "Dynamic Programming"],
+                pattern: "Array Patterns",
+                completed: false
+            },
+            {
+                id: 5,
+                name: "Reverse Linked List & Detect Cycle",
+                difficulty: "medium",
+                description: "Reverse a linked list and detect cycle using Floyd's algorithm.",
+                tags: ["Linked List", "Two Pointers"],
+                pattern: "Linked List",
+                completed: false
+            },
+            {
+                id: 6,
+                name: "Binary Tree Traversals",
+                difficulty: "medium",
+                description: "Inorder traversal (iterative) and level order traversal (BFS).",
+                tags: ["Tree", "BFS", "Stack"],
+                pattern: "Tree Traversal",
+                completed: false
+            },
+            {
+                id: 7,
+                name: "Shortest Path in Unweighted Graph",
+                difficulty: "medium",
+                description: "Find shortest path in unweighted graph using BFS.",
+                tags: ["Graph", "BFS"],
+                pattern: "Graph Algorithms",
+                completed: false
+            },
+            {
+                id: 8,
+                name: "Fibonacci with Memoization & Subset Sum",
+                difficulty: "medium",
+                description: "Implement DP solutions for Fibonacci and subset sum problems.",
+                tags: ["Dynamic Programming", "Memoization"],
+                pattern: "DP Basics",
+                completed: false
+            },
+            {
+                id: 9,
+                name: "SQL Joins & Aggregations",
+                difficulty: "easy",
+                description: "Inner join two tables and write GROUP BY/aggregation queries.",
+                tags: ["SQL", "Database"],
+                pattern: "SQL Queries",
+                completed: false
+            },
+            {
+                id: 10,
+                name: "System Design: URL Shortener",
+                difficulty: "medium",
+                description: "Design a URL shortener service - endpoints, DB design, scaling points.",
+                tags: ["System Design", "API Design"],
+                pattern: "System Design",
+                completed: false
+            }
+        ];
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const problemsContainer = document.getElementById('problemsContainer');
+            const progressFill = document.getElementById('progressFill');
+            const progressPercent = document.getElementById('progressPercent');
+            const resetBtn = document.getElementById('resetBtn');
+            const printBtn = document.getElementById('printBtn');
+            const expandAllBtn = document.getElementById('expandAllBtn');
+            
+            // Toggle sections
+            const sectionTitles = document.querySelectorAll('.section-title');
+            sectionTitles.forEach(title => {
+                title.addEventListener('click', function() {
+                    const contentId = this.id.replace('Toggle', 'Content');
+                    const content = document.getElementById(contentId);
+                    const icon = this.querySelector('i.fa-chevron-down');
+                    
+                    content.classList.toggle('collapsed');
+                    this.classList.toggle('collapsed');
+                });
+            });
+            
+            // Expand all sections
+            expandAllBtn.addEventListener('click', function() {
+                const contents = document.querySelectorAll('.expandable-content');
+                const titles = document.querySelectorAll('.section-title');
+                
+                contents.forEach(content => {
+                    content.classList.remove('collapsed');
+                });
+                
+                titles.forEach(title => {
+                    title.classList.remove('collapsed');
+                });
+            });
+            
+            // Language toggle functionality
+            const langButtons = document.querySelectorAll('.lang-btn');
+            
+            langButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    langButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    const selectedLang = this.getAttribute('data-lang');
+                    
+                    // Update header based on language
+                    const header = document.querySelector('h1');
+                    if (selectedLang === 'python') {
+                        header.innerHTML = 'Infosys SP & DSE Exam Preparation <span style="font-size: 1.2rem;">(Python Version)</span>';
+                    } else if (selectedLang === 'js') {
+                        header.innerHTML = 'Infosys SP & DSE Exam Preparation <span style="font-size: 1.2rem;">(JavaScript Version)</span>';
+                    } else {
+                        header.innerHTML = 'Infosys SP & DSE Exam Preparation <span style="font-size: 1.2rem;">(Java Version)</span>';
+                    }
+                });
+            });
+            
+            // Load problems from localStorage or initialize
+            let problems = JSON.parse(localStorage.getItem('infosysProblems')) || practiceProblems;
+            
+            // Render problems
+            function renderProblems() {
+                problemsContainer.innerHTML = '';
+                
+                problems.forEach(problem => {
+                    const problemCard = document.createElement('div');
+                    problemCard.className = `problem-card ${problem.completed ? 'completed' : ''}`;
+                    problemCard.innerHTML = `
+                        <div class="problem-header">
+                            <div class="problem-name">${problem.id}. ${problem.name}</div>
+                            <div class="problem-difficulty ${problem.difficulty}">${problem.difficulty.toUpperCase()}</div>
+                        </div>
+                        <div class="problem-description">${problem.description}</div>
+                        <div class="problem-tags">
+                            ${problem.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
+                        </div>
+                        <div class="problem-actions">
+                            <span class="pattern">Pattern: ${problem.pattern}</span>
+                            <button class="completed-btn ${problem.completed ? 'checked' : ''}" data-id="${problem.id}">
+                                <i class="fas fa-check"></i>
+                            </button>
+                        </div>
+                    `;
+                    problemsContainer.appendChild(problemCard);
+                });
+                
+                updateProgress();
+                attachCompletionHandlers();
+            }
+            
+            // Attach event handlers to completion buttons
+            function attachCompletionHandlers() {
+                document.querySelectorAll('.completed-btn').forEach(button => {
+                    button.addEventListener('click', function() {
+                        const problemId = parseInt(this.getAttribute('data-id'));
+                        const problem = problems.find(p => p.id === problemId);
+                        
+                        if (problem) {
+                            problem.completed = !problem.completed;
+                            this.classList.toggle('checked');
+                            this.closest('.problem-card').classList.toggle('completed');
+                            
+                            // Save to localStorage
+                            localStorage.setItem('infosysProblems', JSON.stringify(problems));
+                            updateProgress();
+                        }
+                    });
+                });
+            }
+            
+            // Update progress bar
+            function updateProgress() {
+                const completedCount = problems.filter(p => p.completed).length;
+                const totalCount = problems.length;
+                const percentage = Math.round((completedCount / totalCount) * 100);
+                
+                progressFill.style.width = `${percentage}%`;
+                progressPercent.textContent = `${percentage}% (${completedCount}/${totalCount})`;
+            }
+            
+            // Reset progress
+            resetBtn.addEventListener('click', function() {
+                if (confirm("Are you sure you want to reset all problem progress?")) {
+                    problems = practiceProblems.map(p => ({...p, completed: false}));
+                    localStorage.setItem('infosysProblems', JSON.stringify(problems));
+                    renderProblems();
+                }
+            });
+            
+            // Print functionality
+            printBtn.addEventListener('click', function() {
+                window.print();
+            });
+            
+            // Initialize
+            renderProblems();
+            
+            // Add hover effects to cards
+            problemsContainer.addEventListener('mouseover', function(e) {
+                if (e.target.closest('.problem-card')) {
+                    e.target.closest('.problem-card').style.boxShadow = '0 6px 12px rgba(0, 0, 0, 0.15)';
+                }
+            });
+            
+            problemsContainer.addEventListener('mouseout', function(e) {
+                if (e.target.closest('.problem-card')) {
+                    e.target.closest('.problem-card').style.boxShadow = 'none';
+                }
+            });
+            
+            // Initially collapse all sections except first two
+            setTimeout(() => {
+                const contents = document.querySelectorAll('.expandable-content');
+                const titles = document.querySelectorAll('.section-title');
+                
+                // Keep first two sections expanded by default
+                for (let i = 2; i < contents.length; i++) {
+                    contents[i].classList.add('collapsed');
+                    titles[i].classList.add('collapsed');
+                }
+            }, 100);
+        });
+    </script>
+</body>
+</html>

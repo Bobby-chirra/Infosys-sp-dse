@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Interview Prep: 2-Day Intensive Plan</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --light-color: #ecf0f1;
+            --success-color: #2ecc71;
+            --warning-color: #f39c12;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --border-radius: 8px;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+            padding: 0 10px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 30px 0;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+        
+        h1 {
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .language-toggle {
+            display: flex;
+            justify-content: center;
+            margin: 25px 0;
+            gap: 10px;
+        }
+        
+        .lang-btn {
+            padding: 10px 25px;
+            background-color: rgba(255, 255, 255, 0.2);
+            border: 2px solid white;
+            color: white;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .lang-btn:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+        
+        .lang-btn.active {
+            background-color: white;
+            color: var(--primary-color);
+        }
+        
+        .days-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .day-card {
+            flex: 1;
+            min-width: 300px;
+            background-color: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+        }
+        
+        .day-header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .day-title {
+            font-size: 1.8rem;
+            margin-bottom: 5px;
+        }
+        
+        .day-focus {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+        
+        .timeline {
+            padding: 20px;
+        }
+        
+        .time-block {
+            display: flex;
+            margin-bottom: 15px;
+            border-left: 4px solid var(--secondary-color);
+            padding-left: 15px;
+            padding-bottom: 15px;
+            position: relative;
+        }
+        
+        .time-block:last-child {
+            margin-bottom: 0;
+        }
+        
+        .time-block.break {
+            border-left-color: var(--warning-color);
+        }
+        
+        .time-block.meal {
+            border-left-color: var(--success-color);
+        }
+        
+        .time-block.review {
+            border-left-color: #9b59b6;
+        }
+        
+        .time {
+            min-width: 120px;
+            font-weight: 600;
+            color: var(--primary-color);
+            font-size: 1.1rem;
+        }
+        
+        .activity {
+            flex: 1;
+        }
+        
+        .activity-title {
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: #2c3e50;
+        }
+        
+        .activity-details {
+            color: #555;
+            font-size: 0.95rem;
+        }
+        
+        .tech-icon {
+            width: 40px;
+            height: 40px;
+            background-color: var(--light-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            color: var(--primary-color);
+            flex-shrink: 0;
+        }
+        
+        .problem-count {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: white;
+            font-size: 0.8rem;
+            padding: 2px 8px;
+            border-radius: 10px;
+            margin-top: 5px;
+        }
+        
+        .key-points {
+            background-color: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            padding: 25px;
+            margin-bottom: 40px;
+        }
+        
+        .key-points h2 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--light-color);
+        }
+        
+        .points-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+        
+        .point-card {
+            background-color: var(--light-color);
+            padding: 20px;
+            border-radius: var(--border-radius);
+            border-top: 4px solid var(--secondary-color);
+        }
+        
+        .point-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            color: #7f8c8d;
+            border-top: 1px solid #ddd;
+            margin-top: 40px;
+        }
+        
+        .print-btn {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+        }
+        
+        .print-btn:hover {
+            background-color: #1a252f;
+        }
+        
+        @media (max-width: 768px) {
+            .days-container {
+                flex-direction: column;
+            }
+            
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            .time-block {
+                flex-direction: column;
+            }
+            
+            .time {
+                margin-bottom: 5px;
+            }
+        }
+        
+        @media print {
+            .lang-btn, .print-btn {
+                display: none;
+            }
+            
+            .time-block {
+                break-inside: avoid;
+            }
+        }
+    </style>
+
+    <style>
+        /* Base small padding and fluid header text */
+body {
+  padding: 0 8px;
+}
+
+header {
+  padding: 24px 10px;
+}
+
+h1 {
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+}
+
+.subtitle {
+  font-size: clamp(0.95rem, 2.4vw, 1.2rem);
+}
+
+/* Make layout, timeline and cards friendlier on small screens */
+@media (max-width: 768px) {
+  .container {
+    padding: 16px 8px;
+  }
+
+  .days-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .day-card {
+    min-width: 0;
+  }
+
+  .timeline {
+    padding: 16px 12px;
+  }
+
+  .time-block {
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 12px;
+  }
+
+  .tech-icon {
+    margin-bottom: 8px;
+  }
+
+  .time {
+    min-width: auto;
+    font-size: 1rem;
+    margin-bottom: 4px;
+  }
+
+  .activity-details {
+    font-size: 0.9rem;
+  }
+
+  .key-points {
+    padding: 18px 12px;
+    margin-bottom: 24px;
+  }
+
+  .points-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .point-card {
+    padding: 16px 12px;
+  }
+
+  footer {
+    padding: 20px 8px;
+    font-size: 0.9rem;
+  }
+
+  .print-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* Extra-narrow devices */
+@media (max-width: 480px) {
+  .language-toggle {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .lang-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .day-title {
+    font-size: 1.3rem;
+  }
+
+  .day-focus {
+    font-size: 0.9rem;
+  }
+
+  .activity-title {
+    font-size: 1rem;
+  }
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Tech Interview Prep</h1>
+            <p class="subtitle">A 2-Day Intensive Plan for Coding Interviews</p>
+            <p class="subtitle">Hour-by-hour schedule with focus on algorithms, data structures, system design & behavioral prep</p>
+            
+            <div class="language-toggle">
+                <!-- <button class="lang-btn active" data-lang="java">Java Version</button> -->
+                
+                <a href="cheatsheet&question.html" class="lang-btn" style="text-decoration: none;">Cheatsheet & Questions</a>
+                <a href="pyq.html" class="lang-btn" style="text-decoration: none;">Past year Questions</a>
+                
+                
+                <a href="strategy.html" class="lang-btn" style="text-decoration: none;">Strategy</a><!-- <button class="lang-btn" data-lang="js">JavaScript Version</button> -->
+            </div>
+        </header>
+        
+        <div class="days-container">
+            <!-- Day 1 -->
+            <div class="day-card">
+                <div class="day-header">
+                    <h2 class="day-title">Day 1: Foundation & Practice</h2>
+                    <p class="day-focus">Focus on coding skills & core algorithms</p>
+                </div>
+                <div class="timeline">
+                    <div class="time-block">
+                        <div class="tech-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <div class="time">07:00–07:30</div>
+                        <div class="activity">
+                            <div class="activity-title">Quick breakfast + mindset</div>
+                            <div class="activity-details">No phone distractions. Set goals for the day.</div>
+                        </div>
+                    </div>
+                    
+                    <div class="time-block">
+                        <div class="tech-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <div class="time">07:30–09:30</div>
+                        <div class="activity">
+                            <div class="activity-title">Arrays & Strings deep dive</div>
+                            <div class="activity-details">Patterns: two pointers, sliding window.
+                                <div class="problem-count" data-java="4 problems" data-python="4 problems" data-js="4 problems">4 problems (1 easy, 3 medium)</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="time-block break">
+                        <div class="tech-icon">
+                            <i class="fas fa-coffee"></i>
+                        </div>
+                        <div class="time">09:30–09:45</div>
+                        <div class="activity">
+                            <div class="activity-title">Short break</div>
+                            <div class="activity-details">Step away from the screen. Stretch.</div>
+                        </div>
+                    </div>
+                    
+                    <div class="time-block">
+                        <div class="tech-icon">
+                            <i class="fas fa-project-diagram"></i>
+                        </div>
+                        <div class="time">09:45–11:15</div>
+                        <div class="activity">
+                            <div class="activity-title">HashMap/Set problems</div>
+                            <div class="activity-details">Counting, frequency, anagrams.
+                                <div class="problem-count" data-java="3 problems" data-python="3 problems" data-js="3 problems">3 problems</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="time-block">
+                        <div class="tech-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="time">11:15–12:00</div>
+                        <div class="activity">
+                            <div class="activity-title">Complexity analysis drills</div>
+                            <div class="activity-details">Analyze your previous solutions for time & space complexity.</div>
+                        </div>
+                    </div>
+                    
+                    <div class="time-block meal">
+                        <div class="tech-icon">
+                            <i class="fas fa-utensils"></i>
+                        </div>
+                        <div class="time">12:00–13:00</div>
+                        <div class="activity">
+                            <div class="activity-title">Lunch + rest</div>
+                            <div class="activity-details">Take a mental break. No study materials.</div>
+                        </div>
+                    </div>
+                    
+                    <div class="time-block">
+                        <div class="tech-icon">
+                            <i class="fas fa-link"></i>
+                        </div>
+                        <div class="time">13:00–14:30</div>
+                        <div class="activity">
+                            <div class="activity-title">Linked List basics</div>
+                            <div class="activity-details">Reverse, detect cycle, merge.
+                                <div class="problem-count" data-java="2 problems" data-python="2 problems" data-js="2 problems">2 problems</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="time-block">
+                        <div class="tech-icon">
+                            <i class="fas fa-layer-group"></i>
+                        </div>
+                        <div class="time">14:30–16:00</div>
+                        <div class="activity">
+                            <div class="activity-title">Stacks/Queues + monotonic stack</div>
+                            <div class="activity-details">
+                                <div class="problem-count" data-java="1-2 problems" data-python="1-2 problems" data-js="1-2 problems">1-2 problems</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="time-block break">
+                        <div class="tech-icon">
+                            <i class="fas fa-walking"></i>
+                        </div>
+                        <div class="time">16:00–16:15</div>
+                        <div class="activity">
+                            <div class="activity-title">Short break</div>
+                            <div class="activity-details">Quick walk, hydrate.</div>
+                        </div>
+                    </div>
+                    
+                    <div class="time-block">
+                        <div class="tech-icon">
+                            <i class="fas fa-tree"></i>
+                        </div>
+                        <div class="time">16:15–18:00</div>
+                        <div class="activity">
+                            <div class="activity-title">Trees: traversals & BST</div>
+                            <div class="activity-details">Implement recursion & iterative in-order, plus one BST problem.
+                                <div class="problem-count" data-java="2 problems" data-python="2 problems" data-js="2 problems">2 problems</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="time-block meal">
+                        <div class="tech-icon">
+                            <i class="fas fa-utensils"></i>
+                        </div>
+                        <div class="time">18:00–19:00</div>
+                        <div class="activity">
+                            <div class="activity-title">Dinner + short walk</div>
+                            <div class="activity-details">Physical activity helps with mental retention.</div>
+                        </div>
+                    </div>
+                    
+                    <div class="time-block">
+                        <div class="tech-icon">
+                            <i class="fas fa-project-diagram"></i>
+                        </div>
+                        <div class="time">19:00–21:00</div>
+                        <div class="activity">
+                            <div class="activity-title">Graph basics: BFS/DFS practice</div>
+                            <div class="activity-details">Adjacency list, connected components, shortest path unweighted.
+                                <div class="problem-count" data-java="2 problems" data-python="2 problems" data-js="2 problems">2 problems</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="time-block review">
+                        <div class="tech-icon">
+                            <i class="fas fa-clipboard-check"></i>
+                        </div>
+                        <div class="time">21:00–22:00</div>
+                        <div class="activity">
+                            <div class="activity-title">Review mistakes & notes</div>
+                            <div class="activity-details">Write clean notes of tricks/patterns. Sleep prep.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Day 2 -->
+            <div class="day-card">
+                <div class="day-header">
+                    <h2 class="day-title">Day 2: Mock Exam & Interview Prep</h2>
+                    <p class="day-focus">Consolidate knowledge & practice interviews</p>
+                </div>
+                <div class="timeline">
+                    <div class="time-block meal">
+                        <div class="tech-icon">
+                            <i class="fas fa-coffee"></i>
+                        </div>
+                        <div class="time">07:00–07:30</div>
+                        <div class="activity">
+                            <div class="activity-title">Light breakfast</div>
+                            <div class="activity-details">Fuel for the mock exam ahead.</div>
+                        </div>
+                    </div>
+                    
+                    <div class="time-block">
+                        <div class="tech-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="time">07:30–09:30</div>
+                        <div class="activity">
+                            <div class="activity-title">Timed mock coding test</div>
+                            <div class="activity-details">2 problems (one array/string medium, one tree/graph). Simulate exam environment.
+                                <div class="problem-count" data-java="90 mins" data-python="90 mins" data-js="90 mins">90 mins</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="time-block break">
+                        <div class="tech-icon">
+                            <i class="fas fa-stopwatch"></i>
+                        </div>
+                        <div class="time">09:30–09:45</div>
+                        <div class="activity">
+                            <div class="activity-title">Break & review</div>
+                            <div class="activity-details">Review mock answers and optimize.</div>
+                        </div>
+                    </div>
+                    
+                    <div class="time-block">
+                        <div class="tech-icon">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <div class="time">09:45–11:15</div>
+                        <div class="activity">
+                            <div class="activity-title">SQL crash</div>
+                            <div class="activity-details">JOIN queries, GROUP BY examples.
+                                <div class="problem-count" data-java="6-8 queries" data-python="6-8 queries" data-js="6-8 queries">6-8 query snippets</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="time-block">
+                        <div class="tech-icon">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <div class="time">11:15–12:30</div>
+                        <div class="activity">
+                            <div class="activity-title">Core language concepts revision</div>
+                            <div class="activity-details" data-java="Java concepts + Collections cheatsheet" data-python="Python concepts + built-in data structures" data-js="JavaScript concepts + built-in methods">
+                                Java concepts + Collections cheatsheet
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="time-block meal">
+                        <div class="tech-icon">
+                            <i class="fas fa-utensils"></i>
+                        </div>
+                        <div class="time">12:30–13:30</div>
+                        <div class="activity">
+                            <div class="activity-title">Lunch</div>
+                            <div class="activity-details">Rest before afternoon sessions.</div>
+                        </div>
+                    </div>
+                    
+                    <div class="time-block">
+                        <div class="tech-icon">
+                            <i class="fas fa-calculator"></i>
+                        </div>
+                        <div class="time">13:30–15:00</div>
+                        <div class="activity">
+                            <div class="activity-title">Dynamic Programming basics</div>
+                            <div class="activity-details">2 easy DP problems (fib with memo, subset sum / knapsack concept). Learn pattern recognition.
+                                <div class="problem-count" data-java="2 problems" data-python="2 problems" data-js="2 problems">2 problems</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="time-block break">
+                        <div class="tech-icon">
+                            <i class="fas fa-pause-circle"></i>
+                        </div>
+                        <div class="time">15:00–15:15</div>
+                        <div class="activity">
+                            <div class="activity-title">Break</div>
+                            <div class="activity-details">Mental reset before system design.</div>
+                        </div>
+                    </div>
+                    
+                    <div class="time-block">
+                        <div class="tech-icon">
+                            <i class="fas fa-sitemap"></i>
+                        </div>
+                        <div class="time">15:15–16:45</div>
+                        <div class="activity">
+                            <div class="activity-title">System-design mini</div>
+                            <div class="activity-details">Explain design for a simple service (login flow, or URL shortener). Draw endpoints, DB table design, scaling points.</div>
+                        </div>
+                    </div>
+                    
+                    <div class="time-block">
+                        <div class="tech-icon">
+                            <i class="fas fa-comments"></i>
+                        </div>
+                        <div class="time">16:45–18:00</div>
+                        <div class="activity">
+                            <div class="activity-title">Behavioral prep</div>
+                            <div class="activity-details">Craft 4 STAR stories (teamwork, conflict, failure, proud achievement). Rehearse out loud.</div>
+                        </div>
+                    </div>
+                    
+                    <div class="time-block meal">
+                        <div class="tech-icon">
+                            <i class="fas fa-utensils"></i>
+                        </div>
+                        <div class="time">18:00–19:00</div>
+                        <div class="activity">
+                            <div class="activity-title">Dinner</div>
+                            <div class="activity-details">Last meal break before final mock.</div>
+                        </div>
+                    </div>
+                    
+                    <div class="time-block">
+                        <div class="tech-icon">
+                            <i class="fas fa-user-friends"></i>
+                        </div>
+                        <div class="time">19:00–21:00</div>
+                        <div class="activity">
+                            <div class="activity-title">Mock interview</div>
+                            <div class="activity-details">One coding question, one system-design mini, behavioral Qs. Record if possible and review.</div>
+                        </div>
+                    </div>
+                    
+                    <div class="time-block review">
+                        <div class="tech-icon">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                        <div class="time">21:00–22:00</div>
+                        <div class="activity">
+                            <div class="activity-title">Cheat-sheet creation & sleep</div>
+                            <div class="activity-details">1-page summary of must-remember code snippets, complexity rules, SQL patterns, STAR bullets. Sleep early.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="key-points">
+            <h2>Key Preparation Points</h2>
+            <div class="points-grid">
+                <div class="point-card">
+                    <h3>Sleep Schedule</h3>
+                    <p>Plan assumes ~16 waking hours/day. Adjust timings based on your natural sleep pattern. Consistency is key for optimal performance.</p>
+                </div>
+                
+                <div class="point-card">
+                    <h3>Problem Selection</h3>
+                    <p>Focus on medium-difficulty problems that cover patterns rather than hard problems. Quality over quantity.</p>
+                </div>
+                
+                <div class="point-card">
+                    <h3>Language Adaptation</h3>
+                    <p>Practice with your interview language. The plan adapts problem counts and concepts for Java, Python, or JavaScript.</p>
+                </div>
+                
+                <div class="point-card">
+                    <h3>Mock Environment</h3>
+                    <p>Simulate real interview conditions: timed, no unnecessary help, talking through your thought process.</p>
+                </div>
+                
+                <div class="point-card">
+                    <h3>Active Recall</h3>
+                    <p>Review mistakes immediately. Create flashcards for patterns you struggle with. Teach concepts to reinforce learning.</p>
+                </div>
+                
+                <div class="point-card">
+                    <h3>STAR Method</h3>
+                    <p>For behavioral questions: Situation, Task, Action, Result. Prepare concise stories that highlight soft skills.</p>
+                </div>
+            </div>
+        </div>
+        
+        <footer>
+            <p>Tech Interview Prep Intensive Plan • Designed for 2-day focused preparation</p>
+            <p>Remember: Consistency beats intensity. Use this plan as a framework and adapt to your needs.</p>
+            <button class="print-btn" id="printBtn">
+                <i class="fas fa-print"></i> Print This Study Plan
+            </button>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Language toggle functionality
+            const langButtons = document.querySelectorAll('.lang-btn');
+            const problemCounts = document.querySelectorAll('.problem-count');
+            const activityDetails = document.querySelectorAll('[data-java]');
+            
+            langButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Update active button
+                    langButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Get selected language
+                    const selectedLang = this.getAttribute('data-lang');
+                    
+                    // Update problem counts
+                    problemCounts.forEach(element => {
+                        const text = element.getAttribute(`data-${selectedLang}`);
+                        if (text) {
+                            element.textContent = text;
+                        }
+                    });
+                    
+                    // Update activity details with language-specific content
+                    activityDetails.forEach(element => {
+                        const text = element.getAttribute(`data-${selectedLang}`);
+                        if (text) {
+                            element.textContent = text;
+                        }
+                    });
+                    
+                    // Update header based on language
+                    const header = document.querySelector('h1');
+                    if (selectedLang === 'python') {
+                        header.innerHTML = 'Tech Interview Prep <span style="font-size: 1.4rem;">(Python Version)</span>';
+                    } else if (selectedLang === 'js') {
+                        header.innerHTML = 'Tech Interview Prep <span style="font-size: 1.4rem;">(JavaScript Version)</span>';
+                    } else {
+                        header.innerHTML = 'Tech Interview Prep <span style="font-size: 1.4rem;">(Java Version)</span>';
+                    }
+                });
+            });
+            
+            // Print functionality
+            document.getElementById('printBtn').addEventListener('click', function() {
+                window.print();
+            });
+            
+            // Add subtle animations to time blocks on hover
+            const timeBlocks = document.querySelectorAll('.time-block');
+            timeBlocks.forEach(block => {
+                block.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateX(5px)';
+                    this.style.transition = 'transform 0.2s ease';
+                });
+                
+                block.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateX(0)';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
